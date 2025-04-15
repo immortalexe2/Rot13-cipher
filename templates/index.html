@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROT13 Cipher Tool</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">ROT13 Cipher Tool</h1>
+        <form method="POST" class="mt-4">
+            <div class="form-group">
+                <label for="text">Enter Text:</label>
+                <textarea class="form-control" id="text" name="text" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Transform</button>
+        </form>
+
+        {% if transformed_text %}
+        <div class="mt-4">
+            <h4>Transformed Text:</h4>
+            <p class="alert alert-info">{{ transformed_text }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
